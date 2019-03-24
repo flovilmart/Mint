@@ -6,6 +6,7 @@ ARG SOURCE_BRANCH=master
 ARG SOURCE_COMMIT=HEAD
 
 FROM swift:${SWIFT_VERSION}
+RUN mkdir -p /tmp
 RUN git clone --branch ${SOURCE_BRANCH} https://github.com/yonaskolb/Mint.git /tmp/Mint
 WORKDIR /tmp/Mint
 RUN git checkout ${SOURCE_COMMIT}
